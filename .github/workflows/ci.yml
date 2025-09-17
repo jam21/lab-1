@@ -34,5 +34,6 @@ jobs:
 
       - name: Run basic check
         run: PYTHONPATH=. pytest -v      
-      - name: Build Docker image
-        run: docker build -t myapp:ci .
+      - name: Build and push Docker image
+        run: docker build -t jam21/dev_ops_learning:latest .
+        run: docker push jam21/dev_ops_learning:latest
