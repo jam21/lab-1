@@ -6,8 +6,8 @@ def test_postgres_connection():
     conn = psycopg2.connect(
         host=os.getenv("DB_HOST", "localhost"),
         port=os.getenv("DB_PORT", 5432),
-        user=os.getenv("DB_USER", "myuser"),
-        password=os.getenv("DB_PASSWORD", "mypassword"),
+        user=os.getenv("DB_USER", "user"),
+        password=os.getenv("DB_PASSWORD", "password"),
         dbname=os.getenv("DB_NAME", "mydb"),
     )
     cur = conn.cursor()
