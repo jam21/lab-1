@@ -13,7 +13,7 @@ def new_url():
 
 @app.route("/demo")
 def demo_url():
-    return "System response from url /demo. Demo was good"
+    return "System response from url /demo. Demo was good and funny"
 
 DB_CONFIG = {
     "host": os.getenv("DB_HOST", "localhost"),
