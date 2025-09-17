@@ -51,5 +51,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /u01/DevOps
+            docker compose down
             docker compose pull app
             docker compose up -d app
