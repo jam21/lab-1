@@ -34,7 +34,10 @@ jobs:
 
       - name: Run basic check
         run: PYTHONPATH=. pytest -v      
+      - name: Log in to Docker Hub
+        run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+
       - name: Build and push Docker image
         run: |
-          docker build -t jam21/dev_ops_learning:latest .
-          docker push jam21/dev_ops_learning:latest
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/dev_ops_learning:latest .
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/dev_ops_learning:latest
