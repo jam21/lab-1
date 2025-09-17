@@ -7,6 +7,10 @@ app = Flask(__name__)
 def hello():
     return "Hello DevOps! Connected to Postgres DB at host: " + os.getenv("DB_HOST", "unknown")
 
+@app.route("/new_url")
+def new_url():
+    return "System response from url /new_url"
+
 DB_CONFIG = {
     "host": os.getenv("DB_HOST", "localhost"),
     "port": os.getenv("DB_PORT", 5432),
