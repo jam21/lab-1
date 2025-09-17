@@ -11,6 +11,10 @@ def hello():
 def new_url():
     return "System response from url /new_url"
 
+@app.route("/demo")
+def new_url():
+    return "System response from url /demo. Demo was good"
+
 DB_CONFIG = {
     "host": os.getenv("DB_HOST", "localhost"),
     "port": os.getenv("DB_PORT", 5432),
