@@ -41,3 +41,15 @@ jobs:
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/dev_ops_learning:latest .
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/dev_ops_learning:latest
+
+      # --- Deploy to VM ---
+      - name: Deploy over SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: 5.189.153.89
+          username: root
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /u01/DevOps
+            docker compose pull app
+            docker compose up -d app
