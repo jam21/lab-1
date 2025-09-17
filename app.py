@@ -12,7 +12,7 @@ def new_url():
     return "System response from url /new_url"
 
 @app.route("/demo")
-def new_url():
+def demo_url():
     return "System response from url /demo. Demo was good"
 
 DB_CONFIG = {
