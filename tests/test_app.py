@@ -26,6 +26,6 @@ def test_app():
 def test_demo():
     assert app is not None
     client = app.test_client()
-    response = client.get('/')
+    response = client.get('/demo')
     assert response.status_code == 200
     assert b'Demo was good' in response.data
